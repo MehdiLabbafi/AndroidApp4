@@ -1,15 +1,21 @@
-<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <!-- Internet access for APIs -->
     <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- Access to notifications for Android 13 and up -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"
+        android:required="false" />
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/itunes_logo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/itunes_logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.SuperPodcast">
+
+        <!-- Define MainActivity as main page -->
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -20,6 +26,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- Add BroadcastReceiver for notifications -->
+        <receiver android:name=".NotificationReceiver" />
+
     </application>
 
 </manifest>

@@ -4,7 +4,6 @@ plugins {
     kotlin("kapt")
 }
 
-
 android {
     namespace = "com.app.mehdi.superpodcast"
     compileSdk = 34
@@ -40,7 +39,6 @@ android {
     }
     buildFeatures {
         compose = true
-        // اضافه کردن viewBinding
         viewBinding = true
     }
     composeOptions {
@@ -52,7 +50,6 @@ android {
         }
     }
 }
-
 
 dependencies {
 
@@ -75,13 +72,19 @@ dependencies {
     // ConstraintLayout for UI
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
 
-    // Retrofit and Gson
+    // Retrofit and Gson for networking
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
 
     // Glide library for image loading
     implementation("com.github.bumptech.glide:glide:4.12.0")
     kapt("com.github.bumptech.glide:compiler:4.12.0")
+
+    // MediaStyle for handling media playback controls in notifications
+    implementation("androidx.media:media:1.2.1")
+
+    // ExoPlayer for media playback
+    implementation("com.google.android.exoplayer:exoplayer:2.14.2")
 
     // Test dependencies
     testImplementation("junit:junit:4.13.2")
@@ -92,4 +95,3 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-tooling:1.3.0")
     debugImplementation("androidx.compose.ui:ui-test-manifest:1.3.0")
 }
-
